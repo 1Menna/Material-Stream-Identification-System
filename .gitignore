@@ -1,0 +1,9 @@
+# Ignore original dataset
+dataset/
+
+# Ignore augmented dataset
+dataset_augmented/
+
+# Ignore Python cache files
+*.pyc
+__pycache__/

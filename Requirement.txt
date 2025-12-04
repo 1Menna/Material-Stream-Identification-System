@@ -1,0 +1,20 @@
+numpy
+# Core library for numerical computations and array operations, e.g., handling images as arrays.
+
+pandas
+# Used for organizing data in tables (DataFrames), useful for managing labels and image features.
+
+scikit-learn
+# Main machine learning library, used for SVM and k-NN classifiers, splitting data, and evaluation metrics (accuracy, confusion matrix, etc.).
+
+opencv-python
+# Library for image and video processing, used to read images, apply transformations, and display live camera feed for real-time classification.
+
+matplotlib
+# Used for plotting graphs and visualizations, e.g., to analyze model performance or display accuracy curves.
+
+Pillow
+# Image processing library (open, resize, rotate, flip, color adjustments) for preprocessing before feature extraction.
+
+joblib
+# Used to save and load trained models (SVM or k-NN) efficiently and reliably, especially with large datasets.
