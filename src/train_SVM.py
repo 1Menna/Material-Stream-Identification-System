@@ -13,18 +13,16 @@ MODELS_DIR = os.path.join(BASE_DIR, "..", "models")
 os.makedirs(MODELS_DIR, exist_ok=True)
 model_path = os.path.join(MODELS_DIR, "svm_best.pkl")
 
-X = np.load(os.path.join(FEATURES_DIR, "X_features.npy"))
-y = np.load(os.path.join(FEATURES_DIR, "y_labels.npy"))
+X_train = np.load(os.path.join(FEATURES_DIR, "X_features.npy"))
+y_train = np.load(os.path.join(FEATURES_DIR, "y_labels.npy"))
 
-# Train/validation split (85/15)
-X_train, X_val, y_train, y_val = train_test_split(
-    X, y, test_size=0.15, random_state=42, shuffle=True
-)
+X_test = np.load(os.path.join(FEATURES_DIR, "X_test.npy"))
+y_test = np.load(os.path.join(FEATURES_DIR, "y_test.npy"))
 
 # Normalize features
 scaler = StandardScaler()
 X_train = scaler.fit_transform(X_train)
-X_val = scaler.transform(X_val)
+X_test = scaler.transform(X_test)
 
 print("Training SVM using scikit-learn...")
 # You can adjust C and kernel as needed
@@ -33,7 +31,7 @@ svm.fit(X_train, y_train)
 
 print("Final results:")
 print("Train accuracy:", svm.score(X_train, y_train))
-print("Val accuracy:", svm.score(X_val, y_val))
+print("Val accuracy:", svm.score(X_test, y_test))
 
 # Save model + scaler
 with open(model_path, "wb") as f:
