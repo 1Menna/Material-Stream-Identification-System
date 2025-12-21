@@ -1,14 +1,14 @@
-# Material Stream Identification System
+# 🌟 Material Stream Identification System 🌟
 
-**Team Members:** Menna Reda, Fatma Ibrahim, Sara Mohmed, Youssef, Mohammed  
+**Team Members:** Menna Reda, Fatma Ibrahim, Sara Mohmed, Youssef Nasser, Mohammed Moustafa  
 **Project:** Automated Material Stream Identification using Machine Learning  
-**Instructor:** Hanaa  
-**TA:** Sara
+**Instructor:** Hanaa Mobarez
+**TA:** Sara Ahmed Elnady
 
 
 ---
 
-## Project Overview
+## ♻️ Project Overview
 
 The Material Stream Identification (MSI) System is an end-to-end machine learning application designed to classify post-consumer waste into distinct material categories. This system emphasizes the complete ML pipeline: from data preprocessing and feature extraction to classifier training and real-time deployment.
 
@@ -24,15 +24,15 @@ The system currently classifies waste into seven classes:
 
 ---
 
-## Features
+## ♻️ Features
 
 - **Data Preprocessing & Augmentation:**
   - Resize, normalize, and clean images.
   - Apply augmentation (rotation, flipping, scaling, color jitter) to increase dataset size by ≥30%.
 
 - **Feature Extraction:**
-  - Convert raw images into fixed-length numerical feature vectors.
-  - Experimented with multiple feature descriptors (color, texture, histogram-based features).
+  - Convert raw images into fixed-length numerical feature vectors using a Convolutional Neural Network (CNN).
+  - A pre-trained CNN is used to automatically extract high-level discriminative features directly from images.
 
 - **Machine Learning Models:**
   - SVM Classifier: Trained on extracted features with hyperparameter tuning.
@@ -45,7 +45,7 @@ The system currently classifies waste into seven classes:
 
 ---
 
-## Project Structure
+## ♻️ Project Structure
 ```
 Material-Stream-Identification/
 │
@@ -82,68 +82,28 @@ Material-Stream-Identification/
 
 1. **Clone the repository:**
 ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/1Menna/Material-Stream-Identification-System.git
    cd Material-Stream-Identification
 ```
 
-2. **Create a virtual environment:**
-```bash
-   python -m venv venv
-   source venv/bin/activate   # Linux/Mac
-   venv\Scripts\activate      # Windows
-```
-
-3. **Install dependencies:**
+2. **Install dependencies:**
 ```bash
    pip install -r requirements.txt
 ```
 
 **Note:** `dataset/` and `dataset_augmented/` are not included due to size. Add your local dataset manually.
 
----
-
-## Usage
-
-### 1. Preprocessing & Augmentation
-```bash
-python src/preprocess.py
-```
-
-### 2. Feature Extraction
-```bash
-python src/extract_features.py
-```
-
-### 3. Train Models
-
-- **Train SVM:**
-```bash
-  python src/train_svm.py
-```
-
-- **Train k-NN:**
-```bash
-  python src/train_knn.py
-```
-
-### 4. Real-Time Classification
-```bash
-python app/realtime_classifier.py
-```
-
----
+--- 
 
 ## Dependencies
 
 - numpy
-- pandas
+- scikit-image
 - scikit-learn
 - OpenCV (`opencv-python`)
-- Pillow
-- matplotlib
+- tensorflow
 - joblib
 
-(Full versions listed in `requirements.txt`)
 
 ---
 
